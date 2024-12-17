@@ -12,7 +12,9 @@ for levels in report:
     if is_safe(levels):
         part_1 = part_1 + 1
     for i in range(len(levels)):
-        if is_safe(levels[:i] + levels[i + 1:]):
+        sublevels = levels[:]
+        sublevels.pop(i)
+        if is_safe(sublevels):
             part_2 += 1
             break
 
